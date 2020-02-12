@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Generating 10 random restaurants"
+
+CATEGORIES = %w[chinese italian japanese french belgian]
+
+10.times.each do
+  restaurant = {}
+  restaurant[:name] = Faker::Restaurant.name
+  restaurant[:address] = Faker::Address.full_address
+  restaurant[:category] = CATEGORIES[rand(0..4)]
+  Restaurant.new(restaurant).save!
+end
