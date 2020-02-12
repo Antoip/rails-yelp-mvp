@@ -1,2 +1,50 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.index-container {
+  width: 70%;
+  margin: 20px auto;
+}
+
+.index-title {
+  width: 100%;
+  border-bottom: 1px rgba(0,0,0,0.1) solid;
+  margin: 20px 0px;
+}
+
+.restaurant-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurants-table {
+  width: 100%;
+  tr {
+    margin: 40px 0px;
+  }
+}
+
+.restaurant-container,
+.form-container,
+.restaurant-review-container,
+.footer {
+  width: 50%;
+  margin: 20px auto;
+  .restaurant-details {
+    margin: 20px 0px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-action {
+  margin: 0px 10px;
+}
+
+.stars {
+  display: flex;
+  color: yellow;
+}

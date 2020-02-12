@@ -1,1 +1,25 @@
-show.html.erb
+<div class="restaurant-container">
+  <h2><%= @restaurant.name %></h2>
+  <div class="restaurant-details">
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.category.capitalize %> Restaurant</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  <%= link_to "Add a Review", restaurant_path(@restaurant), class: "btn btn-primary footer-action" %>
+  <%= link_to "Home", restaurants_path, class: "btn btn-primary footer-action" %>
+</div>
+
+<div class="restaurant-review-container">
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review-card">
+      <div class="stars">
+        <% @review.rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

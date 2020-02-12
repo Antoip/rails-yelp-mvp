@@ -1,1 +1,25 @@
-index.html.erb
+<div class="index-container">
+  <div class="index-title">
+    <h1>Restaurants</h1>
+  </div>
+  <table class="restaurants-table">
+    <thead>
+      <tr>
+        <th><strong>Name</strong></th>
+        <th><strong>Address</strong></th>
+        <th><strong>Category</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.category %></td>
+          <td><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%></td>
+        </tr>
+        <tr class="spacer"></tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
