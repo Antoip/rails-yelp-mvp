@@ -14,5 +14,13 @@ CATEGORIES = %w[chinese italian japanese french belgian]
   restaurant[:name] = Faker::Restaurant.name
   restaurant[:address] = Faker::Address.full_address
   restaurant[:category] = CATEGORIES[rand(0..4)]
-  Restaurant.new(restaurant).save!
+  restaurant_inst = Restaurant.new(restaurant)
+  restaurant_inst.save!
+  10.times.each do
+    review = {}
+    review[:content] = Faker::Restaurant.review
+    review[:rating] = rand(1..5)
+    review[:restaurant_id] = restaurant_inst.id
+    Review.new(review).save!
+  end
 end

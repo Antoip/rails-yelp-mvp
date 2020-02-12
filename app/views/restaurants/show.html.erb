@@ -8,7 +8,7 @@
 </div>
 
 <div class="footer">
-  <%= link_to "Add a Review", restaurant_path(@restaurant), class: "btn btn-primary footer-action" %>
+  <%= link_to "Add a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary footer-action" %>
   <%= link_to "Home", restaurants_path, class: "btn btn-primary footer-action" %>
 </div>
 
@@ -16,9 +16,12 @@
   <% @restaurant.reviews.each do |review| %>
     <div class="review-card">
       <div class="stars">
-        <% @review.rating.times do %>
+        <% review.rating.times do %>
           <i class="fas fa-star"></i>
         <% end %>
+      </div>
+      <div class="content">
+        <%= review.content %>
       </div>
     </div>
   <% end %>
